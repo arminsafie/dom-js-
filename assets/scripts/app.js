@@ -35,6 +35,7 @@ const deleteMovie = (movieId) => {
   listRoot.children[movieIndex].remove();
   // listRoot.removeChild(listRoot.children[movieIndex]);
   closeMovieDeletionModel();
+  updateUI();
 };
 const deleteMovieHandler = (movieId) => {
   deleteMovieModel.classList.add("visible");
