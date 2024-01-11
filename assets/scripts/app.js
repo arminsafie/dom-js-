@@ -44,9 +44,13 @@ const renderNewMovieElement = (id, title, imageUrl, rating) => {
     </div>
     <div class="movie-element__info">
       <h2>${title}</h2>
-      <p>${rating}/5 stars</p>
+      <div class="box-info">
+        <p>${rating}/5 stars</p>
+        <button class="delete-btn"> delete</button>
+      </div>
     </div>
   `;
+
   newMovieElement.addEventListener("click", deleteMovieHandler.bind(null, id));
   const listRoot = document.getElementById("movie-list");
   listRoot.append(newMovieElement);

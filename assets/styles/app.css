@@ -185,8 +185,19 @@ input:focus {
   width: 100%;
   object-fit: cover;
 }
+.box-info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
 
+}
 .movie-element__info {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+
+
   flex: 2;
   padding: 1rem;
 }
@@ -233,6 +244,14 @@ input:focus {
   flex-direction: column;
 }
 
+.delete-btn{
+  border: transparent;
+  padding: .8rem 1.4rem;
+  border-radius: 1rem ;
+  background-color: #d30808;
+  font-size: 1rem;
+  color: white;
+}
 @media (min-width: 768px) {
   .modal {
     width: 40rem;
@@ -248,3 +267,4 @@ input:focus {
     transform: translateY(0);
   }
 }
+
