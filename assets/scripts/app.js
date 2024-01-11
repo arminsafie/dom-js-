@@ -40,9 +40,14 @@ const deleteMovieHandler = (movieId) => {
   deleteMovieModel.classList.add("visible");
   toggleBackdrop();
   const cancelDeletionBtn = deleteMovieModel.querySelector(".btn--passive");
-  const confirmDeletionBtn = deleteMovieModel.querySelector(".btn--danger");
+  let confirmDeletionBtn = deleteMovieModel.querySelector(".btn--danger");
+  //removing event listener
+  confirmAddMovieButton.replaceWith(confirmDeletionBtn.cloneNode(true));
+  confirmDeletionBtn = deleteMovieModel.querySelector(".btn--danger");
+  cancelDeletionBtn.removeEventListener("click", deleteMovie);
+  //adding event
   cancelDeletionBtn.addEventListener("click", closeMovieDeletionModel);
-  confirmDeletionBtn.addEventListener("click", deleteMovie.bind(null, movieId));
+  confirmDeletionBtn.addEventListener("click", deleteMovie.bind(null, movieId)); //!becuse of bind we can not use removeEventListener
 };
 
 const renderNewMovieElement = (id, title, imageUrl, rating) => {
